@@ -1,11 +1,8 @@
 package com.revivius.nb.darcula.ui;
 
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Paint;
-import javax.swing.JComponent;
-import javax.swing.JToggleButton;
+import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
+import java.awt.*;
 
 /**
  * A minor re-write of DarculaButtonUI to prevent painting background when
@@ -26,20 +23,18 @@ public class ContentAreaAwareToggleButtonUI extends ContentAreaAwareButtonUI {
     protected Paint getBackgroundPaint(JComponent c) {
         JToggleButton b = (JToggleButton) c;
         if (b.isSelected()) {
-            return new GradientPaint(
-                    0.0F, 0.0F, getButtonColor1().brighter(),
-                    0.0F, c.getHeight(), getButtonColor2().brighter()
-            );
+            return getButtonColor();
         }
-        return new GradientPaint(
-                0.0F, 0.0F, getButtonColor1(),
-                0.0F, c.getHeight(), getButtonColor2()
-        );
+        return getButtonColor();
     }
 
     @Override
     public void update(Graphics g, JComponent c) {
         super.update(g, c);
+    }
+
+    protected Color getButtonColor() {
+        return UIManager.getColor("Button.darcula.color");
     }
 
 }

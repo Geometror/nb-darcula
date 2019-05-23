@@ -3,24 +3,14 @@ package com.revivius.nb.darcula.ui;
 import com.bulenkov.iconloader.util.GraphicsConfig;
 import com.bulenkov.iconloader.util.GraphicsUtil;
 import com.bulenkov.iconloader.util.SystemInfo;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.FontMetrics;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Paint;
-import java.awt.Rectangle;
-import javax.swing.AbstractButton;
-import javax.swing.ButtonModel;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.UIManager;
+import sun.swing.SwingUtilities2;
+
+import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.UIResource;
 import javax.swing.plaf.basic.BasicButtonUI;
-import sun.swing.SwingUtilities2;
+import java.awt.*;
 
 /**
  * A minor re-write of DarculaButtonUI to prevent painting background when
@@ -81,7 +71,7 @@ public class ContentAreaAwareButtonUI extends BasicButtonUI {
         }
         g.setColor(fg);
 
-        FontMetrics metrics = SwingUtilities2.getFontMetrics(c, g);
+        FontMetrics metrics = g.getFontMetrics();
         int mnemonicIndex = button.getDisplayedMnemonicIndex();
         if (model.isEnabled()) {
             SwingUtilities2.drawStringUnderlineCharAt(c, g, text, mnemonicIndex, textRect.x
@@ -98,16 +88,11 @@ public class ContentAreaAwareButtonUI extends BasicButtonUI {
 
     protected Paint getBackgroundPaint(JComponent c) {
         JButton b = (JButton) c;
-        if (b.isDefaultButton()) {
-            return new GradientPaint(
-                    0.0F, 0.0F, getSelectedButtonColor1(),
-                    0.0F, c.getHeight(), getSelectedButtonColor2()
-            );
+        if (b.getModel().isPressed()) {
+            return getPressedButtonColor();
         }
-        return new GradientPaint(
-                0.0F, 0.0F, getButtonColor1(),
-                0.0F, c.getHeight(), getButtonColor2()
-        );
+        return getButtonColor();
+
     }
 
     @Override
@@ -121,20 +106,16 @@ public class ContentAreaAwareButtonUI extends BasicButtonUI {
         }
     }
 
-    protected Color getButtonColor1() {
-        return UIManager.getColor("Button.darcula.color1");
+    protected Color getButtonColor() {
+        return UIManager.getColor("Button.darcula.color");
     }
 
-    protected Color getButtonColor2() {
-        return UIManager.getColor("Button.darcula.color2");
+    protected Color getSelectedButtonColor() {
+        return UIManager.getColor("Button.darcula.color");
     }
 
-    protected Color getSelectedButtonColor1() {
-        return UIManager.getColor("Button.darcula.selection.color1");
-    }
-
-    protected Color getSelectedButtonColor2() {
-        return UIManager.getColor("Button.darcula.selection.color2");
+    protected Color getPressedButtonColor() {
+        return UIManager.getColor("Button.darcula.pressedcolor");
     }
 
 }

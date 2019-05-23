@@ -1,24 +1,16 @@
 package com.revivius.nb.darcula.ui;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Graphics;
-import java.beans.PropertyChangeEvent;
-import javax.swing.BorderFactory;
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
+import org.netbeans.swing.plaf.LFCustoms;
+
+import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.metal.MetalLabelUI;
-import org.netbeans.swing.plaf.LFCustoms;
+import java.awt.*;
+import java.beans.PropertyChangeEvent;
 
 /**
  * Many thanks to Neil C. Smith of Praxis-Life. This trick is mostly
