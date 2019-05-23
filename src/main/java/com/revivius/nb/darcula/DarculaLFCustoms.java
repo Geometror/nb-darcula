@@ -1,14 +1,20 @@
 package com.revivius.nb.darcula;
 
-import com.revivius.nb.darcula.ui.InreasedInsetsTableHeaderBorder;
-import com.revivius.nb.darcula.ui.ReducedInsetsDarculaButtonPainter;
 import com.revivius.nb.darcula.options.DarculaLAFOptionsPanelController;
 import com.revivius.nb.darcula.options.DarculaLAFPanel;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Insets;
+import com.revivius.nb.darcula.ui.InreasedInsetsTableHeaderBorder;
+import com.revivius.nb.darcula.ui.ReducedInsetsDarculaButtonPainter;
+import org.netbeans.swing.plaf.LFCustoms;
+import org.openide.util.ImageUtilities;
+import org.openide.util.Lookup;
+import org.openide.util.NbPreferences;
+
+import javax.swing.*;
+import javax.swing.UIDefaults.ProxyLazyValue;
+import javax.swing.border.Border;
+import javax.swing.border.MatteBorder;
+import javax.swing.plaf.ColorUIResource;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -19,19 +25,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.prefs.Preferences;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.InputMap;
-import javax.swing.KeyStroke;
-import javax.swing.UIManager;
-import javax.swing.border.Border;
-import javax.swing.border.MatteBorder;
-import javax.swing.plaf.ColorUIResource;
-import org.netbeans.swing.plaf.LFCustoms;
-import org.openide.util.ImageUtilities;
-import org.openide.util.Lookup;
-import org.openide.util.NbPreferences;
-import javax.swing.UIDefaults.ProxyLazyValue;
 
 /**
  * LFCustoms for Darcula LAF.
@@ -319,7 +312,7 @@ public class DarculaLFCustoms extends LFCustoms {
             SLIDING_BUTTON_UI, "org.netbeans.swing.tabcontrol.plaf.WinXPSlidingButtonUI",
             PROPERTYSHEET_BOOTSTRAP, propertySheetValues,
             
-            SCROLLPANE_BORDER, BorderFactory.createLineBorder(new Color(41, 43, 45)),
+            SCROLLPANE_BORDER, BorderFactory.createEmptyBorder(),
             SCROLLPANE_BORDER_COLOR, new Color(41, 43, 45),
             
             EDITOR_TOOLBAR_BORDER, BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(41, 43, 45)),
@@ -509,35 +502,35 @@ public class DarculaLFCustoms extends LFCustoms {
         public Object[] createKeysAndValues() {
             return new Object[]{
                 //selected & focused
-                TAB_FOCUS_FILL_UPPER, new Color(75, 110, 175),
-                TAB_FOCUS_FILL_LOWER, new Color(65, 81, 109),
+                TAB_FOCUS_FILL_UPPER, new Color(91, 99, 112),
+                TAB_FOCUS_FILL_LOWER, new Color(91, 99, 112),
                 
                 //no selection, no focus
-                TAB_UNSEL_FILL_UPPER, new Color(77, 80, 84),
-                TAB_UNSEL_FILL_LOWER, new Color(56, 58, 60),
+                TAB_UNSEL_FILL_UPPER, new Color(64, 69, 78),
+                TAB_UNSEL_FILL_LOWER, new Color(64, 69, 78),
                 
                 //selected, no focus
-                TAB_SEL_FILL, new Color(100, 104, 107),
+                TAB_SEL_FILL, new Color(86, 116, 168),
                 
                 //no selection, mouse over
-                TAB_MOUSE_OVER_FILL_UPPER, new Color(114, 119, 122),
-                TAB_MOUSE_OVER_FILL_LOWER, new Color(98, 101, 104),
-                TAB_ATTENTION_FILL_UPPER, new Color(255, 255, 128),
-                TAB_ATTENTION_FILL_LOWER, new Color(230, 200, 64),
+                TAB_MOUSE_OVER_FILL_UPPER, new Color(80, 87, 98),
+                TAB_MOUSE_OVER_FILL_LOWER, new Color(80, 87, 98),
+                TAB_ATTENTION_FILL_UPPER, new Color(67, 92, 136),
+                TAB_ATTENTION_FILL_LOWER, new Color(67, 92, 136),
                 
-                TAB_BORDER, new Color(41, 43, 45),
-                TAB_SEL_BORDER, new Color(41, 43, 45),
-                TAB_BORDER_INNER, new Color(70, 72, 74),
+                TAB_BORDER, new Color(41, 43, 45,0),
+                TAB_SEL_BORDER, new Color(41, 43, 45,0),
+                TAB_BORDER_INNER, new Color(70, 72, 74,0),
                 
                 //Borders for the tab control
                 EDITOR_TAB_OUTER_BORDER, BorderFactory.createEmptyBorder(),
                 EDITOR_TAB_CONTENT_BORDER, BorderFactory.createCompoundBorder(
-                        new MatteBorder(0, 0, 1, 0, new Color(41, 43, 45)),
+                        new MatteBorder(0, 0, 1, 0, new Color(41, 43, 45,0)),
                         BorderFactory.createEmptyBorder(0, 1, 0, 1)
                 ),
                 EDITOR_TAB_TABS_BORDER, BorderFactory.createEmptyBorder(),
                 VIEW_TAB_OUTER_BORDER, BorderFactory.createEmptyBorder(),
-                VIEW_TAB_CONTENT_BORDER, new MatteBorder(0, 1, 1, 1, new Color(41, 43, 45)),
+                VIEW_TAB_CONTENT_BORDER, new MatteBorder(0, 1, 1, 1, new Color(41, 43, 45,0)),
                 VIEW_TAB_TABS_BORDER, BorderFactory.createEmptyBorder()
             };
         }
