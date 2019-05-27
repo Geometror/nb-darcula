@@ -1,10 +1,10 @@
 package com.revivius.nb.darcula;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import javax.swing.JPanel;
-import javax.swing.UIManager;
+import com.bulenkov.iconloader.util.GraphicsConfig;
+import com.bulenkov.iconloader.util.GraphicsUtil;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Copy paste from o.n.swing.plaf.
@@ -27,61 +27,16 @@ public final class ToolbarXP extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        int x = 3;
-        for (int i = 4; i < getHeight() - 4; i += 4) {
-            //first draw the rectangular highlight below each dot
-            g.setColor(UIManager.getColor("controlLtHighlight").brighter()); //NOI18N
-            g.fillRect(x + 1, i + 1, 2, 2);
-            //Get the shadow color.  We'll paint the darkest dot first,
-            //and work our way to the lightest
-            Color col = UIManager.getColor("controlShadow").brighter(); //NOI18N
-            g.setColor(col);
-            //draw the darkest dot
-            g.drawLine(x + 1, i + 1, x + 1, i + 1);
+        Color col = UIManager.getColor("controlShadow"); //NOI18N
+        Graphics2D g2d = (Graphics2D) g;
+        BasicStroke stroke = new BasicStroke(2,BasicStroke.CAP_ROUND,BasicStroke.JOIN_BEVEL,0);
+        GraphicsConfig config = GraphicsUtil.setupAAPainting(g);
+        g.setColor(col);
+        g2d.setStroke(stroke);
 
-            //Get the color components and calculate the amount each component
-            //should increase per dot
-            int red = col.getRed();
-            int green = col.getGreen();
-            int blue = col.getBlue();
 
-            //Get the default component background - we start with the dark
-            //color, and for each dot, add a percentage of the difference
-            //between this and the background color
-            Color back = getBackground();
-            int rb = back.getRed();
-            int gb = back.getGreen();
-            int bb = back.getBlue();
-
-            //Get the amount to increment each component for each dot
-            int incr = (rb - red) / 5;
-            int incg = (gb - green) / 5;
-            int incb = (bb - blue) / 5;
-
-            //Increment the colors
-            red += incr;
-            green += incg;
-            blue += incb;
-            //Create a slightly lighter color and draw the dot
-            col = new Color(red, green, blue);
-            g.setColor(col);
-            g.drawLine(x + 1, i, x + 1, i);
-
-            //And do it for the next dot, and so on, for all four dots
-            red += incr;
-            green += incg;
-            blue += incb;
-            col = new Color(red, green, blue);
-            g.setColor(col);
-            g.drawLine(x, i + 1, x, i + 1);
-
-            red += incr;
-            green += incg;
-            blue += incb;
-            col = new Color(red, green, blue);
-            g.setColor(col);
-            g.drawLine(x, i, x, i);
-        }
+        g.drawLine(1, 1, 1, getHeight() - 1);
+        config.restore();
     }
 
     /**

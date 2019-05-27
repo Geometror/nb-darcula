@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.revivius</groupId>
-    <artifactId>nb-darcula</artifactId>
-    <version>1.7</version>
+    <groupId>com.github.Geometror</groupId>
+    <artifactId>nb-darcula-remix</artifactId>
+    <version>0.8</version>
     <packaging>nbm</packaging>
 
-    <name>Darcula LAF for NetBeans</name>
+    <name>Modern Darcula LAF-Remix for NetBeans</name>
 
     <build>
         <plugins>
@@ -16,6 +16,7 @@
                 <version>3.13</version>
                 <extensions>true</extensions>
                 <configuration>
+                    <netbeansInstallation>C:\Program Files\netbeans\</netbeansInstallation>
                     <author>Revivius</author>
                     <requiresRestart>true</requiresRestart>
                     <licenseFile>src/main/resources/LICENSE-2.0.txt</licenseFile>
@@ -72,7 +73,7 @@
         <dependency>
             <groupId>com.bulenkov</groupId>
             <artifactId>darcula</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
         </dependency>
 
         <dependency>

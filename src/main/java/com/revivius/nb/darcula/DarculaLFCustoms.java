@@ -61,7 +61,7 @@ public class DarculaLFCustoms extends LFCustoms {
         Color asfg = new ColorUIResource(187, 187, 187);
         
         Object[] result = {
-            "controlShadow", new ColorUIResource(41, 43, 45),
+            "controlShadow", new ColorUIResource(46, 49, 55),
             "controlHighlight", new ColorUIResource(70, 72, 74),
             "controlDkShadow", new ColorUIResource(41, 43, 45),
             "controlLtHighlight", new ColorUIResource(70, 72, 74),
@@ -264,8 +264,8 @@ public class DarculaLFCustoms extends LFCustoms {
             "TextPane.font", controlFont,
             
             "ToolTip.font", controlFont,
-            "ToolTip.border", BorderFactory.createLineBorder(new Color(154, 154, 102)),
-            "ToolTip.borderInactive", BorderFactory.createLineBorder(new Color(154, 154, 102)),
+            "ToolTip.border", BorderFactory.createEmptyBorder(),
+            "ToolTip.borderInactive", BorderFactory.createEmptyBorder(),
             "ToolTip.foregroundInactive", new Color(187, 187, 187),
             "ToolTip.backgroundInactive", new Color(92, 92, 66),
             
@@ -502,19 +502,19 @@ public class DarculaLFCustoms extends LFCustoms {
         public Object[] createKeysAndValues() {
             return new Object[]{
                 //selected & focused
-                TAB_FOCUS_FILL_UPPER, new Color(91, 99, 112),
-                TAB_FOCUS_FILL_LOWER, new Color(91, 99, 112),
+                TAB_FOCUS_FILL_UPPER, new Color(96, 104, 118),
+                TAB_FOCUS_FILL_LOWER, new Color(96, 104, 118),
                 
                 //no selection, no focus
-                TAB_UNSEL_FILL_UPPER, new Color(64, 69, 78),
-                TAB_UNSEL_FILL_LOWER, new Color(64, 69, 78),
+                TAB_UNSEL_FILL_UPPER, new Color(73, 79, 89),
+                TAB_UNSEL_FILL_LOWER, new Color(73, 79, 89),
                 
                 //selected, no focus
                 TAB_SEL_FILL, new Color(86, 116, 168),
                 
                 //no selection, mouse over
-                TAB_MOUSE_OVER_FILL_UPPER, new Color(80, 87, 98),
-                TAB_MOUSE_OVER_FILL_LOWER, new Color(80, 87, 98),
+                TAB_MOUSE_OVER_FILL_UPPER, new Color(82, 89, 101),
+                TAB_MOUSE_OVER_FILL_LOWER, new Color(82, 89, 101),
                 TAB_ATTENTION_FILL_UPPER, new Color(67, 92, 136),
                 TAB_ATTENTION_FILL_LOWER, new Color(67, 92, 136),
                 
