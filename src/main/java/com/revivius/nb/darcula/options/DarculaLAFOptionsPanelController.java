@@ -15,14 +15,6 @@
  */
 package com.revivius.nb.darcula.options;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
-import java.util.prefs.PreferenceChangeEvent;
-import java.util.prefs.PreferenceChangeListener;
-import javax.swing.JComponent;
-import javax.swing.SwingUtilities;
 import org.netbeans.spi.options.OptionsPanelController;
 import org.openide.LifecycleManager;
 import org.openide.awt.NotificationDisplayer;
@@ -31,14 +23,22 @@ import org.openide.util.ImageUtilities;
 import org.openide.util.Lookup;
 import org.openide.util.NbPreferences;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import java.util.prefs.PreferenceChangeEvent;
+import java.util.prefs.PreferenceChangeListener;
+
 @OptionsPanelController.SubRegistration(
         location = "Appearance",
-        displayName = "#AdvancedOption_DisplayName_DarculaLAF",
-        keywords = "#AdvancedOption_Keywords_DarculaLAF",
-        keywordsCategory = "Appearance/DarculaLAF"
+        displayName = "#AdvancedOption_DisplayName_DarculaRemixLAF",
+        keywords = "#AdvancedOption_Keywords_DarculaRemixLAF",
+        keywordsCategory = "Appearance/DarculaRemixLAF"
 )
 @org.openide.util.NbBundle.Messages({
-    "AdvancedOption_DisplayName_DarculaLAF=Duli Look and Feel",
+    "AdvancedOption_DisplayName_DarculaLAF=Darcula Remix Look and Feel",
     "AdvancedOption_Keywords_DarculaLAF=darcula laf, dark, theme, font, laf"
 })
 public final class DarculaLAFOptionsPanelController extends OptionsPanelController {
