@@ -33,9 +33,9 @@ import java.util.prefs.PreferenceChangeListener;
 
 @OptionsPanelController.SubRegistration(
         location = "Appearance",
-        displayName = "#AdvancedOption_DisplayName_DarculaRemixLAF",
-        keywords = "#AdvancedOption_Keywords_DarculaRemixLAF",
-        keywordsCategory = "Appearance/DarculaRemixLAF"
+        displayName = "#AdvancedOption_DisplayName_DarculaLAF",
+        keywords = "#AdvancedOption_Keywords_DarculaLAF",
+        keywordsCategory = "Appearance/DarculaLAF"
 )
 @org.openide.util.NbBundle.Messages({
     "AdvancedOption_DisplayName_DarculaLAF=Darcula Remix Look and Feel",
