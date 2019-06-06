@@ -38,7 +38,7 @@ import org.openide.util.NbPreferences;
         keywordsCategory = "Appearance/DarculaLAF"
 )
 @org.openide.util.NbBundle.Messages({
-    "AdvancedOption_DisplayName_DarculaLAF=Darcula Look and Feel",
+    "AdvancedOption_DisplayName_DarculaLAF=Duli Look and Feel",
     "AdvancedOption_Keywords_DarculaLAF=darcula laf, dark, theme, font, laf"
 })
 public final class DarculaLAFOptionsPanelController extends OptionsPanelController {

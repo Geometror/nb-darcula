@@ -13,7 +13,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
-                <version>3.13</version>
+                <version>4.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <netbeansInstallation>C:\Program Files\netbeans\</netbeansInstallation>
@@ -23,6 +23,7 @@
                     <licenseName>Apache 2.0</licenseName>
                     <keystore>keystore/store.jks</keystore>
                     <keystorealias>Revivius</keystorealias>
+                    <verifyRuntime>warn</verifyRuntime>
                 </configuration>
             </plugin>
             <plugin>
@@ -69,13 +70,32 @@
     </repositories>
 
     <dependencies>
-        <!-- Darcula LAF -->
+        <!-- Duli LAF -->
         <dependency>
-            <groupId>com.bulenkov</groupId>
-            <artifactId>darcula</artifactId>
-            <version>1.0.2</version>
+            <groupId>com.geometror</groupId>
+            <artifactId>darcula-remix</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
+        <!-- Additional Netbeans Dependencies -->
+        <dependency>
+            <groupId>org.netbeans.modules</groupId>
+            <artifactId>org-netbeans-modules-projectui</artifactId>
+            <version>${netbeans.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-netbeans-modules-projectuiapi</artifactId>
+            <version>${netbeans.version}</version>
+        </dependency>
+
+
+        <!-- Rest -->
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-filesystems</artifactId>
+            <version>${netbeans.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-swing-plaf</artifactId>

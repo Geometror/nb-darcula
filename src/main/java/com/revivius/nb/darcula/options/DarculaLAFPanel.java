@@ -16,19 +16,20 @@
 package com.revivius.nb.darcula.options;
 
 import com.revivius.nb.darcula.DarculaLFCustoms;
-import java.awt.Font;
-import java.beans.PropertyEditor;
-import java.beans.PropertyEditorManager;
-import java.util.prefs.Preferences;
-import javax.swing.UIManager;
 import org.netbeans.spi.options.OptionsPanelController;
 import org.openide.DialogDescriptor;
 import org.openide.DialogDisplayer;
 import org.openide.util.NbPreferences;
 
+import javax.swing.*;
+import java.awt.*;
+import java.beans.PropertyEditor;
+import java.beans.PropertyEditorManager;
+import java.util.prefs.Preferences;
+
 @OptionsPanelController.Keywords(
         location = "Appearance",
-        tabTitle = "Darcula Look and Feel",
+        tabTitle = "Duli Look and Feel",
         keywords = { 
             "dark theme",
             "dark",

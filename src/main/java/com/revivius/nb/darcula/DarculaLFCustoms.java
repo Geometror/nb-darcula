@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 import java.util.prefs.Preferences;
 
 /**
- * LFCustoms for Darcula LAF.
+ * LFCustoms for Duli LAF.
  *
  * @author Revivius
  */
@@ -264,7 +264,7 @@ public class DarculaLFCustoms extends LFCustoms {
             "TextPane.font", controlFont,
             
             "ToolTip.font", controlFont,
-            "ToolTip.border", BorderFactory.createEmptyBorder(),
+            "ToolTip.border", BorderFactory.createEmptyBorder(4,4,4,4),
             "ToolTip.borderInactive", BorderFactory.createEmptyBorder(),
             "ToolTip.foregroundInactive", new Color(187, 187, 187),
             "ToolTip.backgroundInactive", new Color(92, 92, 66),
@@ -346,7 +346,7 @@ public class DarculaLFCustoms extends LFCustoms {
             "ETableHeader.descendingIcon", new ImageIcon(DarculaLFCustoms.class.getResource("column-desc.png")),
             
             // popup switcher
-            "nb.popupswitcher.border", BorderFactory.createLineBorder(new Color(45, 45, 45)),
+            "nb.popupswitcher.border", BorderFactory.createEmptyBorder(),
             
              // debugger
             "nb.debugger.debugging.currentThread", new Color(30, 80, 28),

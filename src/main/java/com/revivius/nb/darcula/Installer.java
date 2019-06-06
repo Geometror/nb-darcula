@@ -1,21 +1,22 @@
 package com.revivius.nb.darcula;
 
 import com.bulenkov.darcula.DarculaLaf;
-import java.lang.reflect.Method;
-import java.util.Collection;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.prefs.Preferences;
-import javax.swing.UIManager;
 import org.openide.modules.ModuleInstall;
 import org.openide.util.Lookup;
 import org.openide.util.NbPreferences;
 import org.openide.windows.WindowManager;
 
+import javax.swing.*;
+import java.lang.reflect.Method;
+import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.prefs.Preferences;
+
 /**
- * Makes Darcula LAF available in preferred LAF combo, installs
+ * Makes Duli LAF available in preferred LAF combo, installs
  * DarculaLFCustoms, set Preferences and switch the editor color profile to
- * Darcula theme.
+ * Duli theme.
  *
  * @author Revivius
  */
@@ -50,6 +51,7 @@ public class Installer extends ModuleInstall {
             });
         };
     }
+
 
     /**
      * Returns if possible to change color profile. Use reflection to
@@ -95,15 +97,15 @@ public class Installer extends ModuleInstall {
             Class classz = loader.loadClass(COLOR_MODEL_CLASS_NAME);
             Object colorModel = classz.newInstance();
             Method method = classz.getDeclaredMethod("setCurrentProfile", String.class);
-            method.invoke(colorModel, DarculaLaf.NAME);
+            method.invoke(colorModel, "Atom");
 
             // method call above changes the token colors but not annotation
             // colors. these two seems to solve the problem
             method = classz.getDeclaredMethod("getAnnotations", String.class);
-            Object acs = method.invoke(colorModel, DarculaLaf.NAME);
+            Object acs = method.invoke(colorModel, "Atom");
 
             method = classz.getDeclaredMethod("setAnnotations", String.class, Collection.class);
-            method.invoke(colorModel, DarculaLaf.NAME, acs);
+            method.invoke(colorModel, "Atom", acs);
         } catch (Exception ex) {
             //ignore
             Logger.getLogger(Installer.class.getName()).log(Level.INFO, "Cannot change editors colors profile.", ex);
